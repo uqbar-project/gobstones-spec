@@ -21,6 +21,7 @@ module StonesSpec
     def result(files, execution, postcondition)
       if execution[:status] == :aborted
         raise Gobstones::AbortedError, execution[:result]
+      end
 
       if execution[:status] == :syntax_error
         raise Gobstones::SyntaxError, execution[:result]
