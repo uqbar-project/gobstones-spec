@@ -15,8 +15,6 @@ module StonesSpec
     end
 
     def execute!(files, parser)
-      # the parser must return something like { result, status }
-      # possible status values are: :passed, :failed, :runtime_error, :syntax_error
       parser.run(files[:source], files[:initial_board], files[:final_board])
     end
 

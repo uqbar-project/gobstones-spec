@@ -1,9 +1,24 @@
 # stones-spec
-> Minimal test framework for Gobstones
+> Minimal, parser-agnostic, test framework for Gobstones
 
 ## Usage
 
-`// TODO`
+```ruby
+StonesSpec::Runner.new(gobstones_parser).run!(test_definition)
+```
+
+## Parser
+
+That `gobstones_parser` must implement:
+- `run(source_file, initial_board_file, final_board_file)`
+
+The return value is something like `{ result, status }`.
+
+Possible status values are:
+  - `:passed`
+  - `:failed`
+  - `:runtime_error`
+  - `:syntax_error`
 
 ## Development test in REPL
 
