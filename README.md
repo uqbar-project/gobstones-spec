@@ -1,5 +1,5 @@
 # stones-spec
-> Minimal, parser-agnostic, test framework for Gobstones
+> Minimal, test framework for Gobstones
 
 ## Usage
 
@@ -21,7 +21,7 @@ Possible status values are:
   - `:unknown_error`: ???
   - `:aborted`: timeouts and caotic things
 
-## Development test in REPL
+## Test builds
 
 ```bash
 # change lib/version.rb and stones-spec.gemspec
