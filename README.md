@@ -15,10 +15,11 @@ That `gobstones_parser` must implement:
 The return value is something like `{ result, status }`.
 
 Possible status values are:
-  - `:passed`
-  - `:failed`
-  - `:runtime_error`
-  - `:compilation_error`
+  - `:passed`: all is ok
+  - `:failed`: runtime errors (aka BOOMs)
+  - `:syntax_error`: syntactic errors
+  - `:unknown_error`: ???
+  - `:aborted`: timeouts and caotic things
 
 ## Development test in REPL
 

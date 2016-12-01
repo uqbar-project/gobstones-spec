@@ -4,8 +4,12 @@ module StonesSpec
       HtmlBoardRenderer.new(caption: caption).render(Stones::GbbReader.new.from_string gbb_representation)
     end
 
-    def make_error_output(result, initial_board_gbb)
-      "#{get_html_board 'Tablero inicial', initial_board_gbb}\n#{get_boom_board initial_board_gbb}\n#{result}"
+    def make_error_output(result, status, initial_board_gbb)
+      if status == :failed
+        "#{get_html_board 'Tablero inicial', initial_board_gbb}\n#{get_boom_board initial_board_gbb}\n#{result}"
+      else
+        result
+      end
     end
 
     def make_boards_output(title, gbb_boards, status, extra = nil)

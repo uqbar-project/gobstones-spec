@@ -11,8 +11,8 @@ module StonesSpec
       end
 
       def validate(initial_board_gbb, actual_final_board_gbb, result, status)
-        if status == :failed
-          check_right_error_type initial_board_gbb, result
+        if status == :failed || status == :unknown_error
+          check_right_error_type initial_board_gbb, result, status
         else
           boards = [['Tablero inicial', initial_board_gbb], ['Tablero final', actual_final_board_gbb]]
           make_boards_output example.title, boards, :failed, failure_message
@@ -21,11 +21,11 @@ module StonesSpec
 
       private
 
-      def check_right_error_type(initial_board_gbb, result)
+      def check_right_error_type(initial_board_gbb, result, status)
         if error_type_matches? result
-          [example.title, :passed, make_error_output(result, initial_board_gbb)]
+          [example.title, :passed, make_error_output(result, status, initial_board_gbb)]
         else
-          [example.title, :failed, "#{invalid_boom_type_message}\n#{make_error_output(result, initial_board_gbb)}"]
+          [example.title, :failed, "#{invalid_boom_type_message}\n#{make_error_output(result, status, initial_board_gbb)}"]
         end
       end
 

@@ -11,15 +11,15 @@ module StonesSpec
     class Error < Exception
     end
 
-    class SyntaxError < Error
-      def status
-        :errored
-      end
-    end
-
     class AbortedError < Error
       def status
         :aborted
+      end
+    end
+
+    class SyntaxError < Error
+      def status
+        :errored
       end
     end
   end

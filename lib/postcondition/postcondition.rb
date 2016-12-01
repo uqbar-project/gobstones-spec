@@ -20,8 +20,8 @@ module StonesSpec
       end
 
       def validate(initial_board_gbb, actual_final_board_gbb, result, status)
-        if status == :failed
-          [example.title, :failed, make_error_output(result, initial_board_gbb)]
+        if status == :failed || status == :unknown_error
+          [example.title, :failed, make_error_output(result, status, initial_board_gbb)]
         else
           validate_expected_result(initial_board_gbb, actual_final_board_gbb, result)
         end
