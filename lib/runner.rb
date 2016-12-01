@@ -1,5 +1,7 @@
 module StonesSpec
   class Runner
+    include StonesSpec::WithTempfile
+    
     def initialize(parser)
       @parser = parser
     end
