@@ -19,7 +19,7 @@ module StonesSpec
     end
 
     def result(files, execution, postcondition)
-      if execution[:status] == :syntax_error
+      if execution[:status] == :compilation_error
         raise Gobstones::SyntaxError, execution[:result]
       end
 

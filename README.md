@@ -18,7 +18,7 @@ Possible status values are:
   - `:passed`
   - `:failed`
   - `:runtime_error`
-  - `:syntax_error`
+  - `:compilation_error`
 
 ## Development test in REPL
 
