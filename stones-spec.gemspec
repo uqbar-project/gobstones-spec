@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'stones-spec'
-  spec.version       = '1.0.0'
+  spec.version       = '1.0.1'
   spec.authors       = ['Mumuki']
   spec.email         = ['mumuki@mumuki.org']
   spec.summary       = 'Minimal test framework for Gobstones'
