@@ -5,8 +5,7 @@ module StonesSpec
     end
 
     def make_error_output(result, initial_board_gbb)
-      # // TODO: Hardcodeé que son runtime errors
-      "#{get_html_board 'Tablero inicial', initial_board_gbb}\n#{get_boom_board initial_board_gbb}\n#{error_message}"
+      "#{get_html_board 'Tablero inicial', initial_board_gbb}\n#{get_boom_board initial_board_gbb}\n#{result}"
     end
 
     def make_boards_output(title, gbb_boards, status, extra = nil)
